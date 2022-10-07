@@ -12,6 +12,7 @@ function Form() {
     <form>
       <InputField
         label="Nome"
+        id="name"
         className="card-name"
         value={ infoCards.name }
         name="name"
@@ -21,6 +22,7 @@ function Form() {
 
       <TextareaField
         label="Descrição"
+        id="description"
         className="description"
         value={ infoCards.description }
         name="description"
@@ -29,6 +31,7 @@ function Form() {
 
       <InputField
         label="Atributo 1"
+        id="attr1"
         className="attr1"
         value={ infoCards.attr1 }
         name="attr1"
@@ -38,6 +41,7 @@ function Form() {
 
       <InputField
         label="Atributo 2"
+        id="attr2"
         className="attr2"
         value={ infoCards.attr2 }
         name="attr2"
@@ -47,6 +51,7 @@ function Form() {
 
       <InputField
         label="Atributo 3"
+        id="attr3"
         className="attr3"
         value={ infoCards.attr3 }
         name="attr3"
@@ -56,6 +61,7 @@ function Form() {
 
       <InputField
         label="Imagem"
+        id="image"
         className="image"
         value={ infoCards.image }
         name="image"
@@ -65,6 +71,7 @@ function Form() {
 
       <SelectField
         label="Raridade"
+        id="rare"
         className="rare"
         value={ infoCards.rare }
         name="rare"
@@ -74,6 +81,7 @@ function Form() {
 
       <InputField
         label="Super Trunfo"
+        id="trunfo"
         className="trunfo"
         value={ infoCards.trunfo }
         name="trunfo"

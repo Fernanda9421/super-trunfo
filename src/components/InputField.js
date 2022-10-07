@@ -8,6 +8,7 @@ function InputField({
       <label htmlFor={ name }>{ label }</label>
       <input
         className={ className }
+        id={ name }
         value={ value }
         name={ name }
         type={ type }

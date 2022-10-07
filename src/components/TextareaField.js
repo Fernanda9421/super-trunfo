@@ -7,6 +7,7 @@ function TextareaField({
     <div>
       <label htmlFor={ name }>{ label }</label>
       <textarea
+        id={ name }
         className={ className }
         value={ value }
         name={ name }

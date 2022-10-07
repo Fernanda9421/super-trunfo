@@ -8,6 +8,7 @@ function SelectField({
       <label htmlFor={ name }>{ label }</label>
       <select
         className={ className }
+        id={ name }
         value={ value }
         name={ name }
         onChange={ onChange }
