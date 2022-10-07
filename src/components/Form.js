@@ -1,29 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import Context from '../context/Context';
+import Button from './Button';
 import InputField from './InputField';
 import SelectField from './SelectField';
 import TextareaField from './TextareaField';
 
 function Form() {
-  const [infoCards, setInfoCards] = useState({
-    name: '',
-    description: '',
-    attr1: 0,
-    attr2: 0,
-    attr3: 0,
-    image: '',
-    rare: 'normal',
-    trunfo: 'false',
-  });
-
-  const handleChange = ({ target }) => {
-    const { name, type, checked, value } = target;
-    const defaultValue = (type === 'checkbox' ? checked : value);
-
-    setInfoCards({
-      ...infoCards,
-      [name]: defaultValue,
-    });
-  };
+  const { infoCards, onInputChange } = useContext(Context);
 
   return (
     <form>
@@ -33,7 +16,7 @@ function Form() {
         value={ infoCards.name }
         name="name"
         type="text"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <TextareaField
@@ -41,7 +24,7 @@ function Form() {
         className="description"
         value={ infoCards.description }
         name="description"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <InputField
@@ -50,7 +33,7 @@ function Form() {
         value={ infoCards.attr1 }
         name="attr1"
         type="number"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <InputField
@@ -59,7 +42,7 @@ function Form() {
         value={ infoCards.attr2 }
         name="attr2"
         type="number"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <InputField
@@ -68,7 +51,7 @@ function Form() {
         value={ infoCards.attr3 }
         name="attr3"
         type="number"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <InputField
@@ -77,7 +60,7 @@ function Form() {
         value={ infoCards.image }
         name="image"
         type="text"
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <SelectField
@@ -86,7 +69,7 @@ function Form() {
         value={ infoCards.rare }
         name="rare"
         options={ ['normal', 'raro', 'muito raro'] }
-        onChange={ handleChange }
+        onChange={ onInputChange }
       />
 
       <InputField
@@ -95,7 +78,14 @@ function Form() {
         value={ infoCards.trunfo }
         name="trunfo"
         type="checkbox"
-        onChange={ handleChange }
+        onChange={ onInputChange }
+      />
+
+      <Button
+        className="save-button"
+        type="button"
+        content="Salvar"
+        isSaveButtonDisabled={ infoCards.isSaveButtonDisabled }
       />
     </form>
   );
