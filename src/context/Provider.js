@@ -9,7 +9,7 @@ function Provider({ children }) {
     attr2: 0,
     attr3: 0,
     image: '',
-    rare: 'normal',
+    rare: 'Normal',
     trunfo: 'false',
     isSaveButtonDisabled: true,
   });

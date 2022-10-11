@@ -1,10 +1,11 @@
 import React from 'react';
+import { FaTimesCircle } from 'react-icons/fa';
 
 function InputField({
   label, value, name, type, className, onChange,
 }) {
   return (
-    <div>
+    <div className="main">
       <label htmlFor={ name }>{ label }</label>
       <input
         className={ className }
@@ -14,6 +15,7 @@ function InputField({
         type={ type }
         onChange={ onChange }
       />
+      { type !== 'checkbox' && <FaTimesCircle className="svg-error" /> }
     </div>
   );
 }

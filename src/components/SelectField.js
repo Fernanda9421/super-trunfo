@@ -4,7 +4,7 @@ function SelectField({
   label, value, name, options, className, onChange,
 }) {
   return (
-    <div>
+    <div className="main">
       <label htmlFor={ name }>{ label }</label>
       <select
         className={ className }
