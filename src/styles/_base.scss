@@ -1,0 +1,53 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: $font-stack;
+}
+
+html, body {
+  height: 100%;
+  background-color: $bg-white;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+input, textarea, select {
+  border: none;
+  padding: 4px;
+  margin-bottom: 8px;
+  background-color: $bg-white;
+  border-radius: 8px;
+  width: 260px;
+  height: 25px;
+
+  &:hover {
+    border-radius: 8px;
+    padding: 4px;
+  }
+}
+
+label {
+  font-size: 15px;
+  color: $gray;
+  display: flex;
+}
+
+.svg-error {
+  color: $error;
+  margin-left: 5px;
+}
