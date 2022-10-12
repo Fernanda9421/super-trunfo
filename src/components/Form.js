@@ -1,16 +1,24 @@
 import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import Context from '../context/Context';
 import Button from './Button';
 import InputField from './InputField';
 import SelectField from './SelectField';
 import TextareaField from './TextareaField';
+import schema from '../schemas/schema';
 
 function Form() {
   const { infoCards, onInputChange } = useContext(Context);
 
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const submit = (data) => console.log(data);
+
   return (
     <main>
-      <form className="form">
+      <form className="form" onSubmit={ handleSubmit(submit) }>
         <h1>Adicionar nova carta</h1>
         <InputField
           label="Nome"
@@ -19,8 +27,10 @@ function Form() {
           value={ infoCards.name }
           name="name"
           type="text"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.name?.message}</p>
 
         <TextareaField
           label="Descrição"
@@ -28,38 +38,46 @@ function Form() {
           className="description"
           value={ infoCards.description }
           name="description"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.description?.message}</p>
 
         <InputField
           label="Brincalhão"
           id="attr1"
-          className="attr1"
+          className="attr"
           value={ infoCards.attr1 }
           name="attr1"
           type="number"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.attr1?.message}</p>
 
         <InputField
           label="Agressividade"
           id="attr2"
-          className="attr2"
+          className="attr"
           value={ infoCards.attr2 }
           name="attr2"
           type="number"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.attr2?.message}</p>
 
         <InputField
           label="Obediência"
           id="attr3"
-          className="attr3"
+          className="attr"
           value={ infoCards.attr3 }
           name="attr3"
           type="number"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.attr3?.message}</p>
 
         <InputField
           label="Imagem"
@@ -68,8 +86,10 @@ function Form() {
           value={ infoCards.image }
           name="image"
           type="text"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.image?.message}</p>
 
         <SelectField
           label="Raridade"
@@ -88,12 +108,14 @@ function Form() {
           value={ infoCards.trunfo }
           name="trunfo"
           type="checkbox"
+          register={ register }
           onChange={ onInputChange }
         />
+        <p className="field-error">{errors.trunfo?.message}</p>
 
         <Button
           className="save-button"
-          type="button"
+          type="submit"
           content="Salvar"
           // isSaveButtonDisabled={ infoCards.isSaveButtonDisabled }
         />

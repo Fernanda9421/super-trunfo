@@ -1,8 +1,7 @@
 import React from 'react';
-import { FaTimesCircle } from 'react-icons/fa';
 
 function TextareaField({
-  label, value, name, className, onChange,
+  label, value, name, className, onChange, register,
 }) {
   return (
     <div className="main">
@@ -12,9 +11,9 @@ function TextareaField({
         className={ className }
         value={ value }
         name={ name }
+        { ...register(name) }
         onChange={ onChange }
       />
-      <FaTimesCircle className="svg-error" />
     </div>
   );
 }
