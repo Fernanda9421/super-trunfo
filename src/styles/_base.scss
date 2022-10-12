@@ -32,7 +32,7 @@ input, textarea, select {
   margin-bottom: 8px;
   background-color: $bg-white;
   border-radius: 8px;
-  width: 260px;
+  width: 290px;
   height: 25px;
 
   &:hover {
@@ -50,4 +50,9 @@ label {
 .svg-error {
   color: $error;
   margin-left: 5px;
+}
+
+.field-error {
+  font-size: 8px;
+  color: $error;
 }

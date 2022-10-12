@@ -1,20 +1,11 @@
 .main {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 
-  .attr1 {
+  .attr {
     width: 167px;
-    margin-left: 8px;
-  }
-
-  .attr2 {
-    width: 143px;
-    margin-left: 8px;
-  }
-
-  .attr3 {
-    width: 161px;
     margin-left: 8px;
   }
 
