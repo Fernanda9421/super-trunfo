@@ -30,6 +30,7 @@
 
 .container-page-main {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -121,4 +122,19 @@
   position: absolute;
   top: 55px;
   right: 18px;
+}
+
+#create {
+  display: flex;
+}
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  background-color: $green;
+}
+
+.image-logo {
+  display: block;
+  margin: 90px auto;
 }
