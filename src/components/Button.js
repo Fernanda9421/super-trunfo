@@ -1,15 +1,13 @@
 import React from 'react';
 
 function Button({
-  className, type, content, isSaveButtonDisabled, onSaveButtonClick,
+  className, type, content,
 }) {
   return (
     <div>
       <button
         className={ className }
         type={ type }
-        disabled={ isSaveButtonDisabled }
-        onClick={ onSaveButtonClick }
       >
         { content }
       </button>

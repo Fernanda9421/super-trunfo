@@ -2,19 +2,40 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Context from '../context/Context';
-import Button from './Button';
 import InputField from './InputField';
 import SelectField from './SelectField';
 import TextareaField from './TextareaField';
 import schema from '../schemas/schema';
+import Button from './Button';
 
 function Form() {
-  const { infoCards, onInputChange } = useContext(Context);
+  const { cards, setCards, infoCards, setInfoCards, onInputChange } = useContext(Context);
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
-  const submit = (data) => console.log(data);
+
+  const submit = async () => {
+    reset({
+      name: '',
+      description: '',
+      attr1: 0,
+      attr2: 0,
+      attr3: 0,
+      image: '',
+    });
+    setCards([...cards, infoCards]);
+    setInfoCards({
+      name: '',
+      description: '',
+      attr1: 0,
+      attr2: 0,
+      attr3: 0,
+      image: '',
+      rare: 'Normal',
+      trunfo: 'false',
+    });
+  };
 
   return (
     <main>
@@ -117,7 +138,6 @@ function Form() {
           className="save-button"
           type="submit"
           content="Salvar"
-          // isSaveButtonDisabled={ infoCards.isSaveButtonDisabled }
         />
       </form>
     </main>

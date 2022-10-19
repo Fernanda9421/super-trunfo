@@ -11,8 +11,9 @@ function Provider({ children }) {
     image: '',
     rare: 'Normal',
     trunfo: 'false',
-    isSaveButtonDisabled: true,
   });
+
+  const [cards, setCards] = useState([]);
 
   const onInputChange = ({ target }) => {
     const { name, type, checked, value } = target;
@@ -26,7 +27,10 @@ function Provider({ children }) {
 
   const context = {
     infoCards,
+    setInfoCards,
     onInputChange,
+    cards,
+    setCards,
   };
 
   return (
