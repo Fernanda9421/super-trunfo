@@ -33,9 +33,13 @@ function Form() {
       attr3: 0,
       image: '',
       rare: 'Normal',
-      trunfo: 'false',
+      trunfo: false,
     });
   };
+
+  const hasTrunfo = () => (
+    cards.some((card) => card.trunfo === true)
+  );
 
   return (
     <main>
@@ -122,17 +126,22 @@ function Form() {
           onChange={ onInputChange }
         />
 
-        <InputField
-          label="Super Trunfo"
-          id="trunfo"
-          className="trunfo"
-          value={ infoCards.trunfo }
-          name="trunfo"
-          type="checkbox"
-          register={ register }
-          onChange={ onInputChange }
-        />
-        <p className="field-error">{errors.trunfo?.message}</p>
+        {
+          hasTrunfo() ? (
+            <p className="has-trunfo">Você já tem um Super Trunfo em seu baralho</p>
+          ) : (
+            <InputField
+              label="Super Trunfo"
+              id="trunfo"
+              className="trunfo"
+              value={ infoCards.trunfo }
+              name="trunfo"
+              type="checkbox"
+              register={ register }
+              onChange={ onInputChange }
+            />
+          )
+        }
 
         <Button
           className="save-button"

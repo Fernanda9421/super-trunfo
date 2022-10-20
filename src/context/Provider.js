@@ -10,7 +10,7 @@ function Provider({ children }) {
     attr3: 0,
     image: '',
     rare: 'Normal',
-    trunfo: 'false',
+    trunfo: false,
   });
 
   const [cards, setCards] = useState([]);

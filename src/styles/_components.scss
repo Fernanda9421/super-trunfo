@@ -129,12 +129,18 @@
 }
 
 .presentation {
-  width: 100vw;
+  width: 98.85vw;
   height: 100vh;
-  background-color: $green;
+  background-color: $black;
 }
 
 .image-logo {
   display: block;
   margin: 90px auto;
+}
+
+.has-trunfo {
+  font-size: 11px;
+  color: $green;
+  font-weight: bold;
 }
