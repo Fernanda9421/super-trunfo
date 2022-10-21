@@ -8,7 +8,7 @@ function Home() {
       <nav>
         <ul>
           <li><a className="nav-link" href="#create">Criar Carta</a></li>
-          <li><a className="nav-link" href="#cards">Cartas</a></li>
+          <li><a className="nav-link" href="#cards">Meu Baralho</a></li>
         </ul>
       </nav>
     </div>
