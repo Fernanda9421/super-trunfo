@@ -1,17 +1,10 @@
-import React, { useContext } from 'react';
-import Context from '../context/Context';
+import React from 'react';
 import Super from '../images/super_trunfo.png';
 
-function Card() {
-  const { infoCards } = useContext(Context);
-
-  const {
-    name, description, attr1, attr2, attr3, image, rare, trunfo,
-  } = infoCards;
-
+function Card({ name, description, attr1, attr2, attr3, image, rare, trunfo }) {
   return (
     <div className="card-container">
-      <h1>Pré-Visualização</h1>
+      {/* <h1>{ heading }</h1> */}
       <div className="visualization-card">
         <div className="first-background-card">
           <h2>{ name }</h2>
